@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "detroit"
+version = "0.1.0"
+description = ""
+authors = ["Joe Gambino <joe@gam.bingo>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+osmnx = "^1.3.0"
+matplotlib = "^3.6.3"
+scikit-learn = "^1.2.1"
+streamlit = "^1.17.0"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+jupyterlab = "^3.6.1"
+ipykernel = "^6.21.1"
+watchdog = "^2.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
