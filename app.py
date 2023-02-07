@@ -28,5 +28,6 @@ with col2:
 fig, walkable_amenities = detroit.walking_isochrone(graph, address, travel_time, amenities, garage)
 st.pyplot(fig, dpi=300)
 
-st.write(f"The following amenities can be within {travel_time} minutes of {garage}.")
-st.dataframe(pd.DataFrame(walkable_amenities["amenity"].value_counts()).T)
+amenity_list = pd.DataFrame(walkable_amenities["amenity"].value_counts())
+st.write(f"There are {amenity_list.shape[0]} kinds of amenities within {travel_time} minutes of {garage}.")
+st.dataframe(amenity_list.T)
