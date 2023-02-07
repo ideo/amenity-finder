@@ -10,11 +10,12 @@ import _pickle as cPickle
 
 @st.cache(allow_output_mutation=True)
 def download_dowtown_detroit():
+    radius = 2000
     address = "2001 Woodward Ave, Detroit, MI 48226"
-    graph = ox.graph_from_address(address, network_type="walk", dist=2000)
+    graph = ox.graph_from_address(address, network_type="walk", dist=radius)
     graph = add_walking_time_to_graph(graph)
 
-    amenities = ox.geometries_from_address(address, tags={"amenity": True})
+    amenities = ox.geometries_from_address(address, tags={"amenity": True}, dist=radius)
     return graph, amenities
 
 
