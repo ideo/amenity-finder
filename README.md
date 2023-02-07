@@ -1,1 +1,1 @@
-# bedrock-detroit
+# amenity-finder
